@@ -1,0 +1,6 @@
+<mvc:View controllerName="com.telcomdataperu.Login.controller.Root" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<!--	<Shell id="shell" appWidthLimited="false" backgroundOpacity="0.9" backgroundImage="img/bg-login.jpeg">
+		<App id="app" backgroundColor="Transparent"></App>
+	</Shell>!-->
+		<App id="app" backgroundColor="Transparent"></App>
+</mvc:View>

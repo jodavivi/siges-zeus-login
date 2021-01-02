@@ -1,0 +1,79 @@
+<mvc:View
+	controllerName="com.telcomdataperu.Login.controller.login.Login"
+	xmlns:m="sap.m"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ux="sap.uxap"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:forms="sap.ui.layout.form"
+	displayBlock="true"
+	xmlns:l="sap.ui.layout"
+	class="viewPadding">
+	<m:Page id="usrPageUsuario" class="usrPageUsuario view-login">
+		<m:content>
+			<section class="sec-login ">
+				<div class="section-photo sec-photo_fullscreen ">
+					<div class="ln-content-create-event">
+						<div class="wp-logo">
+							<img class=" hidden-md hidden-lg img-logo_login" src="" alt=""/>
+						</div>
+						<!--<form id="frmLogin">!-->
+						<div class="wp-login">
+							<h2 class="title-login hidden-md hidden-lg">Inicia sesion para ingresar a tu cuenta
+							</h2>
+							<div class="box-login">
+								<h1 class="hidden-xs hidden-sm">Login
+								</h1>
+								<p class="hidden-xs hidden-sm">Inicia sesion para ingresar a tu cuenta</p>
+								<div class="div-input">
+									<m:Input class="div-input__tag" type="Usuario" showSuggestion="false" valueLiveUpdate="true" fieldGroupIds="inputFormLogin" value="{usuarioModel>/usuario}" placeholder="Usuario" id="email"/>
+								</div>
+								<div class="div-input">
+									<m:Input class="div-input__tag"   type="Password" showSuggestion="false" valueLiveUpdate="true" fieldGroupIds="inputFormLogin" value="{usuarioModel>/clave}" placeholder="Contrasena" id="pass"/>
+								</div>
+								<m:Button class="btn-login" press="onLogin" onclick="stopDefAction(event);" text="Entrar"/>
+								<span class="message-error">Usuario o clave incorrecta</span>
+
+								<div class="div_NavegarRegister">
+									<!--<m:Button class="btnNavegarRegister" press="onNavegarRegister"   text="Registrarse" />-->
+									<m:Button class="btnNavegarRegister" press="onNavegarRecuperar"   text="Recuperar Cuenta" />
+								</div>
+
+							</div>
+						</div>
+
+					<!--</form>!-->
+						<div class="wp-socialMedia">
+							<ul class="list-media">
+								<li class="item-media">
+									<a href="#">
+										<i class="icon-media fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li class="item-media">
+									<a href="#">
+										<i class="icon-media fas fa-globe"></i>
+									</a>
+								</li>
+								<li class="item-media">
+									<a href="#">
+										<i class="icon-media fab fa-twitter"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="hidden-xs hidden-sm wp-sumary ">
+							<img class=" hidden-xs hidden-sm img-logo_login" src=" " alt=""/>
+							<h1>Hola, Bienvenido a ZEUS, Sistema de Gestión para tu negocio.
+							</h1>
+							<p>Somos una compañia 100% Peruana, comprometida en brindar soluciones tecnologicas para tu negocio.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</m:content>
+	</m:Page>
+
+</mvc:View>

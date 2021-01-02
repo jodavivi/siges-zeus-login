@@ -1,0 +1,47 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:html="http://www.w3.org/1999/xhtml"  >
+  <f:Form   class="form-registro frmRecuperar" editable="true" ariaLabelledBy="Title1">
+    <f:toolbar>
+      <Toolbar >
+        <Image class="logo-home" src="img/logo.png"></Image>
+        <Title  class="title-register"  text="Enlace Enviado" level="H4" titleStyle="H4"/>
+        <ToolbarSpacer/>
+      </Toolbar>
+    </f:toolbar>
+    <f:layout>
+      <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+    </f:layout>
+    <f:formContainers>
+      <f:FormContainer ariaLabelledBy="Title2">
+        <f:FormElement >
+          <f:fields>
+            <Text text="Si existe una cuenta, se ha enviado un correo electrónico con un enlace para restablecer su contraseña. Revisar en span si es que no encuentra el correo."/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <MessageStrip
+		text="Haga clic en el enlace del correo electrónico. Se le redirigirá a una página donde podrá reinicializar la contraseña. El enlace del correo electrónico caducará en 2 horas a partir de ahora."
+		type="Warning"
+		class="sapUiSmallMarginTop sapUiSmallMarginBottom"
+		showIcon="true" />
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Text/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Text/>
+            <Button class="btn-registro btn-cancelar" text="Salir" press="onNavBackLogin" />
+          </f:fields>
+        </f:FormElement>
+      </f:FormContainer>
+      </f:formContainers>
+  </f:Form>
+</core:FragmentDefinition>

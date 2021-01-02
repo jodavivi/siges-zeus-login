@@ -1,0 +1,47 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:html="http://www.w3.org/1999/xhtml"  >
+  <f:Form   class="form-registro frmRecuperar" editable="true" ariaLabelledBy="Title1">
+    <f:toolbar>
+      <Toolbar >
+        <Image class="logo-home" src="img/logo.png"></Image>
+        <Title  class="title-register"  text="Solicitud de Registro Enviado" level="H4" titleStyle="H4"/>
+        <ToolbarSpacer/>
+      </Toolbar>
+    </f:toolbar>
+    <f:layout>
+      <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+    </f:layout>
+    <f:formContainers>
+      <f:FormContainer ariaLabelledBy="Title2">
+        <f:FormElement >
+          <f:fields>
+            <Text text="La solicitud para el registro de afiliado al sistema fue enviado correctamente."/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <MessageStrip
+		text="La información enviada será validada dentro de las 24 Horas. Una vez confirmada la información se le enviara un correo con la cuenta para el ingreso a la plataforma. Gracias"
+		type="Warning"
+		class="sapUiSmallMarginTop sapUiSmallMarginBottom"
+		showIcon="true" />
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Text/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Text/>
+            <Button class="btn-registro btn-cancelar" text="Salir" press="onNavBackRegitro" />
+          </f:fields>
+        </f:FormElement>
+      </f:FormContainer>
+      </f:formContainers>
+  </f:Form>
+</core:FragmentDefinition>

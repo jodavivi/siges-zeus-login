@@ -1,0 +1,89 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:rte="sap.ui.richtexteditor"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:t="sap.ui.table"
+  xmlns:u="sap.ui.unified"
+  xmlns:tnt="sap.tnt"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:table="sap.ui.table"
+  xmlns:w="sap.m.Table">
+  <f:Form id="FormToolbar" class="form-registro" editable="true" ariaLabelledBy="Title1">
+    <f:toolbar>
+      <Toolbar id="TB1">
+        <Image class="logo-home" src="img/logo.png"></Image>
+        <Title  class="title-register" id="Title1" text="Registro de miembros" level="H4" titleStyle="H4"/>
+        <ToolbarSpacer/>
+      </Toolbar>
+    </f:toolbar>
+    <f:layout>
+      <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+    </f:layout>
+    <f:formContainers>
+      <f:FormContainer ariaLabelledBy="Title2">
+        <f:FormElement >
+          <f:fields>
+            <Input id="idCodigoReferido" value="{modelRegistro>/afiliado/codigoReferencia}" class=" inputApp" placeholder="* Codigo Referido"  required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput"/>
+            <Text id="idReferido" text="" class="inputApp"  />
+            </f:fields>
+          </f:FormElement>
+          <f:FormElement >
+            <f:fields>
+                 <Input id="idDniRuc" value="{modelRegistro>/afiliado/dni}" class="inputApp" placeholder="* Ingrese DNI/RUC"  required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput" />
+              </f:fields>
+            </f:FormElement>
+          <f:formElements>
+          <f:FormElement>
+            <f:fields>
+              <Input id="idNombre" value="{modelRegistro>/afiliado/nombre}" class="inputApp" placeholder="* Ingresar nombre" required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput" />
+              <Input id="idApellido" value="{modelRegistro>/afiliado/apellido}" class="inputApp" placeholder="* Ingresar Apellidos" required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput" />
+            </f:fields>
+          </f:FormElement>
+          <f:FormElement  class="inputApp">
+            <f:fields>
+              <ComboBox items="{ path: 'modelRegistro>/departamento'}" placeholder="* Seleccione departamento" class="inputApp clsDepartamento" width="100%" id="idDepartamento" selectedKey="{modelRegistro>/afiliado/departamentoId}" required="true" fieldGroupIds="validadorGrupoSelect" change="buscarProvincia">
+                <core:Item key="{modelRegistro>id}" text="{modelRegistro>descripcionCampo1}" />
+              </ComboBox>
+              <ComboBox  items="{ path: 'modelRegistro>/provincia'}"  placeholder="* Seleccione Provincia" class="inputApp " width="auto" id="idProvincia" selectedKey="{modelRegistro>/afiliado/provinciaId}"  required="true" fieldGroupIds="validadorGrupoSelect" change="buscarDistrito">
+                <core:Item key="{modelRegistro>id}" text="{modelRegistro>descripcionCampo1}" />
+              </ComboBox>
+              <ComboBox items="{ path: 'modelRegistro>/distrito'}"  placeholder="* Seleccione Distrito" class="inputApp " width="auto" id="idDistrito" selectedKey="{modelRegistro>/afiliado/distritoId}"  required="true" fieldGroupIds="validadorGrupoSelect" change="validarCampoUnit">
+                <core:Item key="{modelRegistro>id}" text="{modelRegistro>descripcionCampo1}" />
+              </ComboBox>
+            </f:fields>
+          </f:FormElement>
+          <f:FormElement >
+            <f:fields>
+              <Input value="{modelRegistro>/afiliado/direccion}"   class="inputApp " placeholder="* Ingrese la dirección" required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput" />
+            </f:fields>
+          </f:FormElement>
+          <f:FormElement>
+            <f:fields>
+              <Input id="idEmail" value="{modelRegistro>/afiliado/email}" class="inputApp " placeholder="* Ingresar email" required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput" />
+              <Input id="idTelefono" value="{modelRegistro>/afiliado/numeroContacto}" class="inputApp " placeholder="* Ingrese número de contacto" required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput" />
+            </f:fields>
+          </f:FormElement>
+          <f:FormElement>
+            <f:fields>
+              <DatePicker id="txtFechaNacimiento" displayFormat="dd-MM-YYYY"  class="inputApp" dateValue="{modelAfiliado>/tablaAfiliadoSeleccionado/fechaNacimiento}" placeholder="* Ingrese Fecha de Nacimiento" required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput"/>
+              <Input id="idNumOperacion" value="{modelRegistro>/afiliado/numeroOperacion}"  class="inputApp " placeholder="* Ingrese número de operación de Inscripcion - (BCP)" required="true" valueLiveUpdate="true" fieldGroupIds="validarGrupoteInput"/>
+            </f:fields>
+          </f:FormElement>
+          <f:FormElement label="">
+            <f:fields>
+              <Button class="btn-registro btn-registrar" text="Registrar" press="onPressRegistrar" />
+              <Button class="btn-registro btn-cancelar" text="Salir" press="onNavBackLogin" />
+            </f:fields>
+          </f:FormElement>
+          <f:FormElement>
+            <f:fields>
+               <Text text="* Campos Obligatorios" textAlign="Left" class="lblObligatorio"/>
+            </f:fields>
+          </f:FormElement>
+        </f:formElements>
+      </f:FormContainer>
+      </f:formContainers>
+  </f:Form>
+</core:FragmentDefinition>
