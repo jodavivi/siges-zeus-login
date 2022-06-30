@@ -7,15 +7,15 @@ sap.ui.define([
 	return {
 		recuperarClave: function(oParam, callback, context) {
       UtilHttp.httpPost(Constantes.services.recuperarClave, oParam, Constantes.IdApp, function(result) {
-        var oAuditResponse = result;
-        if (oAuditResponse.codigoRespuesta === 1) {
-          callback(UtilResponse.success(oAuditResponse.transaccionId, oAuditResponse.mensajeRespuesta, result.objectResponse));
-        } else if (oAuditResponse.codigoRespuesta > 1) {
-          callback(UtilResponse.warn(oAuditResponse.transaccionId, oAuditResponse.mensajeRespuesta, result.objectResponse));
-        } else if (oAuditResponse.codigoRespuesta < 0 && oAuditResponse.codigoRespuesta !== -1000) {
-          callback(UtilResponse.error(oAuditResponse.transaccionId, oAuditResponse.mensajeRespuesta, result.objectResponse));
-        } else if (oAuditResponse.codigoRespuesta === -1000) {
-          callback(UtilResponse.exception(oAuditResponse.mensajeRespuesta));
+        var oAuditResponse = result.oAuditResponse;
+        if (oAuditResponse.iCode === 1) {
+          callback(UtilResponse.success(oAuditResponse.sIdTransaccion, oAuditResponse.sMessage, result.oData));
+        } else if (oAuditResponse.iCode > 1) {
+          callback(UtilResponse.warn(oAuditResponse.sIdTransaccion, oAuditResponse.sMessage, result.oData));
+        } else if (oAuditResponse.iCode < 0 && oAuditResponse.iCode !== -1000) {
+          callback(UtilResponse.error(oAuditResponse.sIdTransaccion, oAuditResponse.sMessage, result.oData));
+        } else if (oAuditResponse.iCode === -1000) {
+          callback(UtilResponse.exception(oAuditResponse.sMessage));
         }
       }, context);
     }

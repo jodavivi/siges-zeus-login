@@ -90,6 +90,12 @@
           "name": "appRecuperar",
           "target": "targetRecuperar"
         }
+        ,
+        {
+          "pattern": "changepass:?query:",
+          "name": "appChangePass",
+          "target": "targetChangePass"
+        }
       ],
       "targets": {
 
@@ -107,6 +113,11 @@
           "transition": "slide",
           "viewName": "recuperar.Recuperar",
           "viewLevel": 3
+        },
+        "targetChangePass": {
+          "transition": "slide",
+          "viewName": "changepass.ChangePass",
+          "viewLevel": 4
         }
       }
     }

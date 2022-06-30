@@ -31,7 +31,7 @@ sap.ui.define([
       var self = this;
       self.getView().byId("txtEmail").setValueState("None");
       var oParam = {};
-      oParam.usuario = self.getView().byId("txtEmail").getValue();
+      oParam.sUsuario = self.getView().byId("txtEmail").getValue();
 
       if(self.getView().byId("txtEmail").getValue() === null || self.getView().byId("txtEmail").getValue().length === 0){
         self.getView().byId("txtEmail").setValueState("Error");
@@ -39,10 +39,10 @@ sap.ui.define([
       }
       sap.ui.core.BusyIndicator.show(0);
       Recuperar.recuperarClave(oParam, function(result){
-          if (result.iCode === 1) {
+          //if (result.iCode === 1) {
             var navCon = self.byId("navRecuperar");
             navCon.to(self.byId("pageMensaje"), "slide");
-          }
+          //}
           sap.ui.core.BusyIndicator.hide();
       }, self);
     },

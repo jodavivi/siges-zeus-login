@@ -1,0 +1,58 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:html="http://www.w3.org/1999/xhtml"  >
+  <f:Form id="frmRecuperar" class="form-registro frmRecuperar" editable="true" ariaLabelledBy="Title1">
+    <f:toolbar>
+      <Toolbar id="TB1">
+        <Image class="logo-home" src="img/logo.png"></Image>
+        <Title  class="title-register" id="Title1" text="Cambiar Clave" level="H4" titleStyle="H4"/>
+        <ToolbarSpacer/>
+      </Toolbar>
+    </f:toolbar>
+    <f:layout>
+      <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+    </f:layout>
+    <f:formContainers>
+      <f:FormContainer ariaLabelledBy="Title2">
+        <f:FormElement >
+          <f:fields>
+            <Text text="Introduzca su nueva clave."/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Text/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement label="Clave">
+          <f:fields>
+            <Input id="txtClave1" placeholder="Ingresar clave" type="Password" value=""    required="true"/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement label="Repetir Clave">
+          <f:fields>
+            <Input id="txtClave2" placeholder="Repetir clave" type="Password" value=""    required="true"/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Text/>
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Button class="btn-registro btn-registrar"  text="Cambiar Clave" press="onPressChangePass" />
+            <Button class="btn-registro btn-cancelar" text="Salir" press="onNavBack" />
+          </f:fields>
+        </f:FormElement>
+        <f:FormElement>
+          <f:fields>
+            <Text text="* Campo Obligatorio " />
+          </f:fields>
+        </f:FormElement>
+      </f:FormContainer>
+      </f:formContainers>
+  </f:Form>
+</core:FragmentDefinition>

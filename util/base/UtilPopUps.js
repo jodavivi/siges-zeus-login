@@ -307,6 +307,34 @@ sap.ui.define([
                     width: '20rem,'
                 });
             }
+        },
+        messageBox: function(mensaje, tipo, callback) {
+            if (tipo.toUpperCase() === "C") {
+              MessageBox.show(mensaje, {
+                icon: MessageBox.Icon.QUESTION,
+                title: "Confirmación",
+                actions: [MessageBox.Action.YES, MessageBox.Action.NO],
+                onClose: function(sAnswer) {
+                  return callback(sAnswer === MessageBox.Action.YES);
+                }
+              });
+            }
+      
+            if (tipo.toUpperCase() === "E") {
+              MessageBox.error(mensaje, {
+                onClose: function(sAnswer) {
+                  return callback(sAnswer === MessageBox.Action.YES);
+                }
+              });
+            }
+      
+            if (tipo.toUpperCase() === "S") {
+              MessageBox.success(mensaje, {
+                onClose: function(sAnswer) {
+                  return callback(sAnswer === MessageBox.Action.YES);
+                }
+              });
+            } 
         }
 
     };
