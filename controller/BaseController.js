@@ -8,7 +8,7 @@ sap.ui.define([
     return Controller.extend("com.telcomdataperu.Login.controller.BaseController", {
   
       onAfterRendering: function() {
-
+        console.log("");
       },
       getRouter: function() {
         try {
