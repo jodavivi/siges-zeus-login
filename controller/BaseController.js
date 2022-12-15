@@ -6,7 +6,7 @@ sap.ui.define([
     "use strict";
   
     return Controller.extend("com.telcomdataperu.Login.controller.BaseController", {
-  
+      
       onAfterRendering: function() {
         console.log("");
       },
